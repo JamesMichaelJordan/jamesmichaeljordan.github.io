@@ -1,0 +1,42 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My program 4-1 assignment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Week 4 Assignment</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Problem Solving</h3>
+        <label>Input One: <input type="text" id="input1"></label>
+        <label>Input Two: <input type="text" id="input2"></label>
+        <!-- <label><button onclick="functionname()">Start The Program</button></label> -->
+        <label><button onclick="addNumbers()">Start The Program</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function addNumbers() {
+            let number1 = parseFloat(document.getElementById('input1').value);
+            let number2 = parseFloat(document.getElementById('input2').value);
+
+            let output = number1 + number2;
+
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+
+</body>
+
+</html>

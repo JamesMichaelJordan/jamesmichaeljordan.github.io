@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covert Pounds to Kilograms</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function conversion() {
+        //INPUT retrieve input and convert from text to number
+        let pounds_number = parseFloat(document.getElementById('pounds').value);
+        //PROCESSING turn the "pounds" into kilograms
+        let kilograms = pounds_number / 2.2046;
+        let result = kilograms.toFixed(1)
+        //OUTPUT output the function reluslt to the doucument
+        document.getElementById("output").innerHTML = result;
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Covert Pounds to Kilograms</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Type in pounds and click the button to see kilograms</h3>
+        <label>Input One: <input type="text" id="pounds"></label>
+        <label><button onclick="conversion()">Start The Program</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+</body>
+
+</html>

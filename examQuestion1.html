@@ -1,0 +1,50 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Question 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Calculate your pay after tax</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Insert you hours worked</h3>
+        <label>Regular hours: <input type="text" id="regularHours"></label>
+        <label>Overtime hours: <input type="text" id="overtimeHours"></label>
+        <label><button onclick="calculatePay()">Calculate after tax pay</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function calculatePay() {
+        //INPUT retrieve inputs as number values and store them as variables
+        let regular_hours = parseFloat(document.getElementById("regularHours").value);
+        let overtime_hours = parseFloat(document.getElementById("overtimeHours").value);
+        let tax_rate = .15; //or 15%
+        let regular_pay = 15; //or $15
+        let overtime_pay = regular_pay * 1.5; //or $22.50
+
+        //PROCESSING calculate total pay by adding hours pay and subtracting tax
+        let total_pay = (regular_pay * regular_hours) + (overtime_pay * overtime_hours);
+        let tax_amount = tax_rate * total_pay;
+        let afterTax_pay = total_pay - tax_amount;
+        let result = '$' + afterTax_pay.toFixed(2);
+
+        //OUTPUT put the final result on the document
+        document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

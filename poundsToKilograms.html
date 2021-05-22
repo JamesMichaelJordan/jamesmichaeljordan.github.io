@@ -6,18 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Covert Pounds to Kilograms</title>
     <link rel="stylesheet" href="css/style.css">
-    <script>
-        function conversion() {
-        //INPUT retrieve input and convert from text to number
-        let pounds_number = parseFloat(document.getElementById('pounds').value);
-        //PROCESSING turn the "pounds" into kilograms
-        let kilograms = pounds_number / 2.2046;
-        let result = kilograms.toFixed(1)
-        //OUTPUT output the function reluslt to the doucument
-        document.getElementById("output").innerHTML = result;
-        }
-
-    </script>
 </head>
 
 <body>
@@ -35,6 +23,19 @@
     <footer>
         &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
     </footer>
+
+    <script>
+        function conversion() {
+        //INPUT retrieve input and convert from text to number
+        let pounds_number = parseFloat(document.getElementById('pounds').value);
+        //PROCESSING turn the "pounds" into kilograms
+        let kilograms = pounds_number / 2.2046;
+        let result = kilograms.toFixed(1);
+        //OUTPUT output the function reluslt to the doucument
+        document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
 </body>
 
 </html>

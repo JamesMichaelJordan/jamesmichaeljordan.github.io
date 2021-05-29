@@ -1,0 +1,66 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select the Right Footwear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Choosing the Correct Footwear</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Choose the Weather to Determine Correct Footwear</h3>
+        Weather: <select id="weather">
+            <option value="0" disabled selected>Select Weather</option>
+            <option value="hot">Hot</option>
+            <option value="rain">Rain</option>
+            <option value="snow">Snow</option>
+            <option value="unknown">Unknown</option>
+        </select>
+        <label><button onclick="determineFootwear()">Start The Program</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function determineFootwear() {
+            // INPUT retrieve the option selected
+            let weather = document.getElementById('weather').value;
+            let footwear = 0;
+
+            // PROCESSING assign the right footwear to the selected weather
+            switch (weather) {
+                case 'hot':
+                    footwear = 'Sandals';
+                    break;
+                case 'rain':
+                    footwear = 'Galoshes';
+                    break;
+                case 'snow':
+                    footwear = 'Boots';
+                    break;
+                case 'unknown':
+                    footwear = 'Shoes';
+                    break;
+                default:
+                    footwear = 'Try Again';
+                    break;
+            }
+            // OUTPUT put footwear on the document
+            //let result = footwear + ' is the footwear you should use.'
+            document.getElementById('output').innerHTML = footwear
+        }
+
+    </script>
+
+</body>
+
+</html>

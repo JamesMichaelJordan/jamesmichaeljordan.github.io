@@ -1,0 +1,45 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Question 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>Calculate the volume of a cylinder</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Insert information</h3>
+        <label>Radius: <input type="text" id="radius"></label>
+        <label>Height: <input type="text" id="height"></label>
+        <label><button onclick="calculateVolume()">Calculate the Volume</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function calculateVolume() {
+            //INPUT retrieve radius and height input and convert them to numbers
+            let r = parseFloat(document.getElementById("radius").value);
+            let h = parseFloat(document.getElementById("height").value);
+
+            //PROCESSING determine pi and perform the formula
+            let pi = Math.PI;
+            let V = pi * r**2 * h;
+            let result = V.toFixed(0);
+
+            //OUTPUT put result onto document
+            document.getElementById("output").innerHTML = "Volume: " + result;
+        }
+    </script>
+
+</body>
+
+</html>

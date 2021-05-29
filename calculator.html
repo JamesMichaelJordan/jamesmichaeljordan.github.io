@@ -1,0 +1,88 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Test Your Math Skills!</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3></h3>
+        Number One: <input type="text" id="num1">
+        Operator: <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+        </select>
+        Number Two: <input type="text" id="num2">
+        Answer: <input type="text" id="answer">
+        <label></label><button onclick="checkMath()">Start The Program</button></label>
+        <hr>
+        <div id="output"></div>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function checkMath() {
+            // INPUT two numbers, an operator, and the users answer
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let operator = document.getElementById('operator').value;
+            let num2 = parseFloat(document.getElementById('num2').value);
+            let answer = parseFloat(document.getElementById('answer').value);
+            let message = "Incorrect 😢";
+            let answerkey = 0;
+
+            // PROCESSING
+            // if the answer is equal to the real answer then we change the message to "Correct! 🏆"
+
+            switch (operator) {
+                case '+':
+                    answerkey = num1 + num2;
+                    break;
+                case '-':
+                    answerkey = num1 - num2;
+                    break;
+                case '/':
+                    answerkey = num1 / num2;
+                    break;
+                case '*':
+                    answerkey = num1 * num2;
+                    break;
+                default:
+                    message = operator + ' is not a valid operator'
+                    break;
+            }
+
+
+            // if (operator == '+') {
+            //     answerkey = num1 + num2;
+            // } else if (operator == '-') {
+            //     answerkey = num1 - num2;
+            // } else if (operator == '/') {
+            //     answerkey = num1 / num2;
+            // } else if (operator == '*') {
+            //     answerkey = num1 * num2;
+            // } else {
+            //     message = 'You must enter a valid operator'
+            // }
+
+            if (answerkey == answer) {
+                message = "Correct! 🏆"
+            }
+            document.getElementById('output').innerHTML = message
+        }
+
+    </script>
+
+</body>
+
+</html>

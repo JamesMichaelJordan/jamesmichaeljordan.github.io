@@ -1,0 +1,51 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>See if the Customer gets a Discount!</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Input Sale Information</h3>
+        <label>Customers Subtotal: <input type="text" id="subtotal"></label>
+        <label><button onclick="calculateDiscount()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function calculateDiscount() {
+            // INPUT retrieve input from user and get days of the week data
+            let subtotal = parseFloat(document.getElementById("subtotal").value);
+            let now = new Date();
+            let dayOfWeek = now.getDay();
+            let tax = .06;
+            let discount = .10;
+            let total = subtotal + (tax * subtotal);
+            // PROCESSING calculate total of purchase and apply discount
+            if (dayOfWeek == 2 || dayOfWeek == 3 && subtotal > 50) {
+                newSubtotal = subtotal - (discount * subtotal)
+                total = newSubtotal + (tax * newSubtotal)
+            } else {
+                let total = subtotal + (tax * subtotal)
+            }
+            // OUTPUT put total on the document
+            let result = total.toFixed(2);
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+
+</html>

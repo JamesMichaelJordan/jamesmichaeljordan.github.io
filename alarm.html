@@ -1,0 +1,63 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>See if you need to wake up!</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Click the button</h3>
+
+        <label><button onclick="alarm()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function alarm() {
+            // INPUT get the date, month, day of the month and day of the week to determine days to sleep in and holidays. Set message
+            let now = new Date();
+            let month = now.getMonth();
+            let dayOfMonth = now.getDate();
+            let dayOfWeek = now.getDay();
+            let message = "Get Up!";
+
+            // PROCESSING determine when the message should be sleep in
+            if (month == 0 && dayOfMonth == 1 || month == 6 && dayOfMonth == 4 || month == 11 && dayOfMonth == 25) {
+                message = "Sleep in."
+            }   else if (dayOfWeek == 0 || dayOfWeek == 6) {
+                message = "Sleep In."
+            } else {
+                message = "Get Up!"
+            }
+
+            // if (month == 0 && dayOfMonth == 1) {
+            //     message = "Sleep in."
+            // } else if (month == 6 && dayOfMonth == 4) {
+            //     message = "Sleep in."
+            // } else if (month == 11 && dayOfMonth == 25) {
+            //     message = "Sleep in."
+            // } else if (dayOfWeek == 0 || dayOfWeek == 6) {
+            //     message = "Sleep In."
+            // } else {
+            //     message = "Get Up!"
+            // }
+            // OUTPUT put relust on document
+            document.getElementById("output").innerHTML = message
+        }
+    </script>
+
+</body>
+
+</html>

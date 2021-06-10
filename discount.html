@@ -32,13 +32,13 @@
             let dayOfWeek = now.getDay();
             let tax = .06;
             let discount = .10;
-            let total = subtotal + (tax * subtotal);
+            let total;
             // PROCESSING calculate total of purchase and apply discount
             if (dayOfWeek == 2 || dayOfWeek == 3 && subtotal > 50) {
-                newSubtotal = subtotal - (discount * subtotal)
+                let newSubtotal = subtotal - (discount * subtotal)
                 total = newSubtotal + (tax * newSubtotal)
             } else {
-                let total = subtotal + (tax * subtotal)
+                total = subtotal + (tax * subtotal)
             }
             // OUTPUT put total on the document
             let result = total.toFixed(2);

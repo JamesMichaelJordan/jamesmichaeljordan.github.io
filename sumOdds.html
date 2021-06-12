@@ -1,0 +1,46 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of the odds</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Find the Sum of Odd Numbers Up to Chosen Integer</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Choose an Integer</h3>
+        <label>Integer: <input type="text" id="integer"></label>
+        <label><button onclick="sumOdds()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function sumOdds() {
+            // INPUT retrieve input and set to number, set sum
+            let integer = parseFloat(document.getElementById('integer').value);
+            let sum = 0;
+            // PROCESSING starting from 1, determine all odd numbers and add them to the sum
+            for (let i = 1; i <= integer; i += 2) {
+                sum += i
+            }
+            // OUTPUT put result on document
+            console.log(sum);
+            document.getElementById('output').innerHTML = sum;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

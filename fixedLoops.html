@@ -1,0 +1,82 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixing Loops</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Want to See the Correct Outputs?</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Down Here</h3>
+        <label><button onclick="fixedLoops()">Start The Program</button></label>
+        <hr>
+        <p id="display1"></p>
+        <p id="display2"></p>
+        <p id="display3"></p>
+        <p id="display4"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+
+        function fixedLoops() {
+            //PART 1
+            let output1 = '';
+            let i = 0;
+            while (i < 2) {
+                output1 += `Part 1:${i}<br>`;
+                i += 1;
+            }
+            console.log(output1);
+            document.getElementById('display1').innerHTML = output1;
+
+            //PART 2
+            let output2 = '';
+            for (let j = 0; j < 3; j++) {
+                if (j !== 2) {
+                    output2 += `Part 2:${j}, `;
+                }
+                else {
+                    output2 += `Part 2:${j}`;
+                }
+            }
+            document.getElementById('display2').textContent = output2;
+
+
+            //PART 3
+            let output3 = '';
+            for (let k = 0; k < 4; k++) {
+                output3 += k + " ";
+            }
+            document.getElementById('display3').textContent = output3;
+
+            //PART 4
+            let balance = 1000;
+            const rate = .10;
+            let n = 30;
+            for (let s = 0; s < n; s++) {
+                interest = balance * rate;
+                balance += interest;
+            }
+            
+            document.getElementById('display4').textContent = balance;
+
+
+
+
+
+        }
+    </script>
+
+</body>
+
+</html>

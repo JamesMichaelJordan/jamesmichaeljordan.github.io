@@ -1,0 +1,40 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W09 Assignment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Times Table using Repetition</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Times Table of 5</h3>
+        <label><button onclick="timesTable()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function timesTable() {
+            let result;
+            let table = '';
+            for (let i = 1; i <= 12; i++) {
+                result = i * 5;
+                table += `5 x ${i} = ${result}<br>`;
+            }
+            document.getElementById('output').innerHTML = table;
+        }
+    </script>
+
+</body>
+
+</html>

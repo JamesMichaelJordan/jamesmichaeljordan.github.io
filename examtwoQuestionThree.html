@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exam 2, Question 3</title>
+</head>
+
+<body>
+    <p>Please enter three numbers:</p>
+    <input type="text" id="start" size="5"><br>
+    <input type="text" id="end" size="5"><br>
+    <input type="text" id="divisor" size="5">
+    <button type="button" onclick="test()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        /* Input:
+         * Processing:
+         * Output:
+         */
+        function test() {
+            let first = parseInt(document.getElementById('start').value);
+            let last = parseInt(document.getElementById('end').value);
+            let divider = parseInt(document.getElementById('divisor').value);
+            let number;
+            let message; 
+            for (let i = first; i <= last; i++) {
+                let remainder = first % divider;
+                if (remainder == 0) {
+                    number += first + ' ';
+                    
+                } else {
+                    number = ''
+                }
+                
+            }
+
+            document.getElementById('output').innerHTML = number;
+        }
+            
+    </script>
+</body>
+
+</html>

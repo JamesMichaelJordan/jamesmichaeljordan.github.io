@@ -1,0 +1,44 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam 2, Question 1</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3></h3>
+        <label><button onclick="power()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        function power() {
+            let result = "";
+            for (let i = 0; i <= 31; i++) {
+                let number = 2**i;
+                if (i < 31) {
+                    result += number + ', ';
+                } else {
+                    result += number
+                }
+                
+            }
+            document.getElementById('output').innerHTML = result
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exam 2, Question 2</title>
+</head>
+
+<body>
+    <p>Please enter two numbers:</p>
+    <input type="text" id="one" size="5"><br>
+    <input type="text" id="two" size="5">
+    <button type="button" onclick="check()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        /* Input: Retrieve the two numbers and turn them into integers/ determine sum/ set default message
+        
+         * Processing: Do the checks and redetermine the messages
+
+         * Output: Output the new message to the document
+         */
+        function check() {
+            //INPUT
+            let number1 = parseFloat(document.getElementById('one').value);
+            let number2 = parseFloat(document.getElementById('two').value);
+            let sum = number1 + number2;
+            let message = '';
+
+            //PROCESSING
+            if ((number1 > 5 && number2 > 5) || sum > 20) {
+                message = 'True';
+            } else {
+                message = 'False';
+            }
+
+            //OUTPUT
+            document.getElementById('output').innerHTML = message;
+
+        }
+    </script>
+</body>
+
+</html>

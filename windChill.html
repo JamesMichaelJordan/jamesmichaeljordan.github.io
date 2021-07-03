@@ -30,7 +30,7 @@
             let temperature = parseFloat(document.getElementById('temp').value);
             let windspeed = parseFloat(document.getElementById('wind').value);
             let windchill = '';
-            if (temperature >= 50 && windspeed >= 3) {
+            if (temperature <= 50 && windspeed >= 3) {
                 windchill = windChill(temperature, windspeed);
             } else {
                 windchill = "Inputs don't meet requirements, enter higher inputs."

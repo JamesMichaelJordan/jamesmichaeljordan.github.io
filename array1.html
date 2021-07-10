@@ -1,0 +1,83 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Week 12 Assignment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Array Assignment</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Click Button to Execute Program</h3>
+
+        <label><button onclick="test()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        /* Defining Table
+ * Input: no user input
+ * Processing: Test the addEnds and getMiddle functions by calling them.
+ * Output: The values returned from the addEnds and getMiddle functions.
+ */
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the addEnds function by calling it two times.
+            let sum1 = addEnds(list1);
+            let sum2 = addEnds(list2);
+
+
+
+            // Test the getMiddle function by calling it two times.
+            let mid1 = getMiddle(list1);
+            let mid2 = getMiddle(list2);
+
+            // Build a string to display to the user.
+            let output =
+                sum1 + '<br>' +
+                sum2 + '<br>' +
+                mid1 + '<br>' +
+                mid2;
+
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+
+        }
+
+        function addEnds(list) {
+            let sum = list[0] + list[list.length - 1];
+            return sum;
+        }
+
+        function getMiddle(list) {
+            let number = list.length
+            let middle = ''
+            let middle2 = ''
+
+            if (number % 2 == 0) {
+                middle = list[list.length / 2];
+                middle2 = list[(list.length / 2) - 1];
+                middle = (middle + middle2) / 2;
+            } else {
+                middle = list[(list.length - 1) / 2]
+            }
+            return middle;
+        }
+    </script>
+
+</body>
+
+</html>

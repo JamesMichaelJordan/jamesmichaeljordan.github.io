@@ -1,0 +1,79 @@
+<!DOCTYPE html> <!-- This means HTML 5 document type-->
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Week 12 Assignment</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Array 2 Assignment</h1>
+        <h2>James Jordan</h2>
+    </header>
+    <main>
+        <h3>Click Button to Execute Program</h3>
+
+        <label><button onclick="test()">Start The Program</button></label>
+        <hr>
+        <p id="output"></p>
+    </main>
+    <footer>
+        &copy;2021 &bull; James Jordan &bull; BYU-Idaho &bull; CIT 160
+    </footer>
+
+    <script>
+        /* Defining Table
+ * Input: no user input
+ * Processing: Test the addEnds and getMiddle functions by calling them.
+ * Output: The values returned from the addEnds and getMiddle functions.
+ */
+        function test() {
+            let list1 = [17, 8, 9, 5, 20];
+            let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+            // Test the countEvens function by calling it two times.
+            let count1 = countEvens(list1);
+            let count2 = countEvens(list2);
+
+            // Test the multiply function by calling it two times.
+            let mult1 = multiply(list1, 3);
+            let mult2 = multiply(list2, 4);
+
+            // Build a string to display to the user.
+            let output =
+                count1 + '<br>' +
+                count2 + '<br>' +
+                mult1 + '<br>' +
+                mult2;
+
+            // Display the output string for the user to see.
+            document.getElementById('output').innerHTML = output;
+        }
+
+        function countEvens(list) {
+            let evenCount = 0;
+            for (let i = 0; i < list.length; i++) {
+                if (list[i] % 2 == 0) {
+                    evenCount += 1;
+                } else {
+                    evenCount += 0;
+                }
+            }
+            return evenCount;
+        }
+
+        function multiply(list, multiplier) {
+            for (let i = 0; i < list.length; i++) {
+                list[i] = ' ' + (list[i] * multiplier);
+            }
+            return list;
+        }
+
+    </script>
+
+</body>
+
+</html>
